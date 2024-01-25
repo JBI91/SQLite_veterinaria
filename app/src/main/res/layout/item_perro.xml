@@ -1,0 +1,41 @@
+<!-- item_perro.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvNombrePerro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Perro"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvFechaNacimientoPerro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Nacimiento del Perro" />
+
+    <TextView
+        android:id="@+id/tvEstaVacunadoPerro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado de Vacunación del Perro" />
+
+    <TextView
+        android:id="@+id/tvEsMachoPerro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Género del Perro" />
+
+    <TextView
+        android:id="@+id/tvComentariosPerro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comentarios sobre el Perro" />
+
+    <!-- Otros TextViews y elementos según tus necesidades -->
+
+</LinearLayout>

@@ -1,0 +1,108 @@
+Vista 1 : Por Propietario - Nombre de propietario Teléfono y eMail; al hacer clic,  listado de todos los datos de cada uno de sus perros.
+
+-- Crear tabla "raza"
+CREATE TABLE raza (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    caracteristicas TEXT
+);
+-- Crear tabla "perro"
+CREATE TABLE perro (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    fecha_nacimiento DATE,
+    estaVacunado BOOLEAN,
+    esMacho BOOLEAN,
+    comentarios TEXT,
+    raza_id INTEGER,
+    propietario_id INTEGER,
+    FOREIGN KEY (raza_id) REFERENCES raza(id),
+    FOREIGN KEY (propietario_id) REFERENCES propietario(id)
+);
+-- Crear tabla "propietario"
+CREATE TABLE propietario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    apellidos TEXT,
+    telefono TEXT,
+    eMail TEXT
+);
+-- Insertar razas en la tabla "raza"
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Labrador Retriever', 'Inteligente, amigable, versátil');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Bulldog Francés', 'Compacto, musculoso, de buen carácter');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Dachshund', 'Cuerpo alargado, patas cortas, valiente');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Golden Retriever', 'Amigable, inteligente, devoto');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Poodle', 'Inteligente, activo, de pelo rizado');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Chihuahua', 'Pequeño, alerta, leal');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('German Shepherd', 'Valiente, inteligente, leal');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Beagle', 'Amigable, curioso, gran olfato');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Siberian Husky', 'Fuerte, amigable, resistente');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Pomeranian', 'Compacto, alerta, de pelo denso');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Boxer', 'Fuerte, leal, enérgico');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Shih Tzu', 'Amigable, alegre, pelaje largo');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Doberman', 'Elegante, valiente, leal');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Great Dane', 'Gigante, amigable, gentil');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Rottweiler', 'Fuerte, valiente, confiado');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Yorkshire Terrier', 'Pequeño, valiente, pelaje sedoso');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Dalmatian', 'Elegante, amigable, con manchas');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Pug', 'Adorable, amigable, compacto');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Shetland Sheepdog', 'Inteligente, leal, pelaje abundante');
+INSERT INTO raza (nombre, caracteristicas) VALUES ('Border Collie', 'Ágil, inteligente, enérgico');
+-- Insertar propietarios en la tabla "propietario"
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('José', 'Martínez González', '123456789', 'jose@gmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('María', 'López Sánchez', '987654321', 'maria@hotmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Antonio', 'Rodríguez Fernández', '567890123', 'antonio@yahoo.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Isabel', 'Gómez Martín', '678901234', 'isabel@gmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Francisco', 'Serrano Ruiz', '345678901', 'francisco@hotmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Carmen', 'Torres Díaz', '234567890', 'carmen@yahoo.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Manuel', 'Hernández López', '456789012', 'manuel@gmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Ana', 'Moreno Castro', '678901234', 'ana@hotmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Javier', 'Ortega Romero', '789012345', 'javier@yahoo.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Laura', 'Jiménez Navarro', '890123456', 'laura@gmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Miguel', 'Ruiz García', '123456789', 'miguel@hotmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Rosa', 'Sánchez González', '234567890', 'rosa@yahoo.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Juan', 'Martínez López', '345678901', 'juan@gmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Elena', 'Fernández Serrano', '456789012', 'elena@hotmail.com');
+INSERT INTO propietario (nombre, apellidos, telefono, eMail) VALUES ('Carlos', 'Gómez Torres', '567890123', 'carlos@yahoo.com');
+-- Insertar perros en la tabla "perro"
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Max', '2020-05-10', 1, 1, 'Perro juguetón', 1);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Lola', '2019-08-15', 1, 0, 'Cariñosa y obediente', 2);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Rocky', '2021-01-20', 0, 1, 'Necesita entrenamiento', 3);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Bella', '2020-03-05', 1, 0, 'Adora los paseos', 4);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Charlie', '2018-12-12', 1, 1, 'Guardián y leal', 5);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Daisy', '2020-06-28', 1, 0, 'Energética y amistosa', 6);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Cooper', '2019-04-03', 1, 1, 'Le encanta jugar con pelotas', 7);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Mia', '2021-08-22', 0, 0, 'Recién adoptada', 8);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Zeus', '2017-11-17', 1, 1, 'Fuerte y protector', 1);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Luna', '2020-09-14', 1, 0, 'Adora acurrucarse', 10);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Oliver', '2018-02-08', 1, 1, 'Inteligente y juguetón', 11);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Zoe', '2019-06-25', 1, 0, 'Ágil y rápida', 7);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Maximus', '2020-04-12', 1, 1, 'Nombre imponente para un perro fuerte', 1);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Lily', '2018-10-30', 1, 0, 'Adorable y sociable', 2);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Buddy', '2019-07-18', 1, 1, 'Alegre y activo', 3);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Ruby', '2021-02-05', 0, 0, 'Recién llegada', 4);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Teddy', '2018-05-19', 1, 1, 'Peludo y cariñoso', 5);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Milo', '2020-11-08', 1, 1, 'Juguetón y curioso', 2);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Coco', '2019-01-24', 1, 0, 'Le gusta el agua', 7);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Oscar', '2017-06-14', 1, 1, 'Elegante y obediente', 8);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Molly', '2020-07-03', 1, 0, 'Amistosa y protectora', 9);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Duke', '2018-09-28', 1, 1, 'Fuerte y valiente', 1);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Bella', '2019-03-11', 1, 0, 'Adora los mimos', 2);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Lucky', '2020-12-30', 0, 1, 'Recién adoptado', 12);
+INSERT INTO perro (nombre, fecha_nacimiento, estaVacunado, esMacho, comentarios, raza_id) VALUES ('Stella', '2017-04-22', 1, 0, 'Elegante y tranquila', 1);
+-- Asignar perros a propietarios
+UPDATE perro SET propietario_id = 1 WHERE id IN (1, 2);
+UPDATE perro SET propietario_id = 2 WHERE id = 3;
+UPDATE perro SET propietario_id = 3 WHERE id IN (4, 5);
+UPDATE perro SET propietario_id = 4 WHERE id = 6;
+UPDATE perro SET propietario_id = 5 WHERE id IN (7, 8, 9);
+UPDATE perro SET propietario_id = 6 WHERE id = 10;
+UPDATE perro SET propietario_id = 7 WHERE id IN (11, 12);
+UPDATE perro SET propietario_id = 8 WHERE id IN (13, 14, 15);
+UPDATE perro SET propietario_id = 9 WHERE id = 16;
+UPDATE perro SET propietario_id = 10 WHERE id IN (17, 18);
+UPDATE perro SET propietario_id = 11 WHERE id = 19;
+UPDATE perro SET propietario_id = 12 WHERE id IN (20, 21);
+UPDATE perro SET propietario_id = 13 WHERE id = 22;
+UPDATE perro SET propietario_id = 14 WHERE id IN (23, 24);
+UPDATE perro SET propietario_id = 15 WHERE id = 25;

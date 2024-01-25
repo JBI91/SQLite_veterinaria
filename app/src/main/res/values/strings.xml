@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SQLite_veterinaria</string>
+    <string name="email">Email:</string>
+    <string name="telefono">Telefono:</string>
+    <string name="apellidos">Apellidos:</string>
+    <string name="nombre">Nombre:</string>
+</resources>
